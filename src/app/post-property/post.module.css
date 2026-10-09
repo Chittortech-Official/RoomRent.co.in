@@ -1,0 +1,275 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper {
+  flex: 1;
+  padding: calc(var(--navbar-height) + var(--space-8)) 0 var(--space-16);
+  background: var(--bg-surface);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+}
+
+/* Stepper Container */
+.stepperContainer {
+  background: white;
+  border-radius: var(--r-xl);
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Stepper Header */
+.stepperHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6) var(--space-8);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-base);
+}
+
+.stepItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  position: relative;
+  flex: 1;
+  z-index: 1;
+}
+
+.stepCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-full);
+  background: white;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  transition: all var(--transition-base);
+  z-index: 2;
+}
+
+.stepLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition-base);
+}
+
+.stepLine {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: var(--border);
+  z-index: 1;
+}
+
+.stepActive .stepCircle {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.stepActive .stepLabel {
+  color: var(--text-primary);
+}
+
+/* Content Area */
+.stepperContent {
+  padding: var(--space-8);
+}
+
+.paneTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.paneSubtitle {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  margin-top: -0.75rem;
+}
+
+/* Property Types */
+.propertyTypes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.typeCard {
+  position: relative;
+  padding: var(--space-4);
+  border-radius: var(--r-lg);
+  border: 1.5px solid var(--border);
+  background: white;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.typeCard:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.typeActive {
+  border-color: var(--primary);
+  background: var(--brand-50);
+  color: var(--primary);
+}
+
+.typeCheck {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--r-full);
+  background: var(--primary);
+  color: white;
+  font-size: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all var(--transition-base);
+}
+
+.typeActive .typeCheck {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Form Specific */
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.radioGroup {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+.amenitiesCheckboxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-size: 0.9375rem;
+}
+
+/* Upload Area */
+.uploadArea {
+  border: 2px dashed var(--border);
+  border-radius: var(--r-xl);
+  padding: var(--space-10) var(--space-5);
+  text-align: center;
+  background: var(--bg-surface);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.uploadArea:hover {
+  border-color: var(--primary);
+  background: var(--brand-50);
+}
+
+.uploadText {
+  font-size: 1.0625rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.uploadSubtext {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Footer Actions */
+.stepperFooter {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-8);
+  border-top: 1px solid var(--border);
+  background: var(--bg-base);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .propertyTypes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .stepperHeader {
+    padding: var(--space-4);
+  }
+  
+  .stepLabel {
+    display: none;
+  }
+  
+  .stepperContent {
+    padding: var(--space-5) var(--space-4);
+  }
+  
+  .stepperFooter {
+    padding: var(--space-4);
+  }
+}

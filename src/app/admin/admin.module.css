@@ -1,0 +1,647 @@
+.adminLayout {
+  display: flex;
+  min-height: 100vh;
+  background: #F4F7FE; /* Light blueish gray background */
+  font-family: var(--font-base), sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #111827; /* Darker blue/gray */
+  color: #9CA3AF; /* Muted text */
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebarHeader {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #2563EB;
+}
+
+.logoText {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logoSubtext {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #9CA3AF;
+  letter-spacing: 0.05em;
+}
+
+.navMenu {
+  flex: 1;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sectionTitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #6B7280;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  padding-left: 12px;
+  letter-spacing: 0.05em;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  color: #D1D5DB;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.navItemLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.activeNav {
+  background: #3B82F6;
+  color: white;
+}
+
+.activeNav:hover {
+  background: #3B82F6;
+}
+
+.badge {
+  background: #F59E0B;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.sidebarFooter {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.adminProfileCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatarSmall {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #3B82F6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.adminProfileText {
+  display: flex;
+  flex-direction: column;
+}
+
+.adminProfileName {
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.adminProfileRole {
+  color: #9CA3AF;
+  font-size: 0.75rem;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #EF4444;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: white;
+}
+
+.pageTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background: #F3F4F6;
+  border-radius: 20px;
+  padding: 8px 16px;
+  gap: 8px;
+}
+
+.searchInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.875rem;
+  width: 200px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #6B7280;
+}
+
+.headerIcon {
+  cursor: pointer;
+}
+
+.adminProfileHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 20px;
+  border-left: 1px solid #E5E7EB;
+}
+
+/* Content Area */
+.contentArea {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.welcomeSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.welcomeTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.welcomeSubtitle {
+  color: #6B7280;
+  font-size: 0.875rem;
+}
+
+.liveBadge {
+  background: #ECFDF5;
+  color: #059669;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  background: #10B981;
+  border-radius: 50%;
+}
+
+/* Stats */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.statIconWrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+/* Quick Actions */
+.quickActions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.actionBtnOutline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.actionBtnOutline:hover {
+  background: #F9FAFB;
+}
+
+/* Table Area */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.cardSubtitle {
+  font-size: 0.75rem;
+  color: #6B7280;
+}
+
+.viewAll {
+  font-size: 0.875rem;
+  color: #6B7280;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Tabs */
+.tabsContainer {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #E5E7EB;
+  margin-bottom: 24px;
+}
+
+.tab {
+  padding: 12px 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6B7280;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tabActive {
+  color: #2563EB;
+  border-bottom: 2px solid #2563EB;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #9CA3AF;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  padding: 16px 0;
+  font-size: 0.875rem;
+  color: #111827;
+  font-weight: 500;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.tdSubtext {
+  display: block;
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.statusPending {
+  color: #D97706;
+  background: #FEF3C7;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.selectAction {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  font-size: 0.875rem;
+  background: white;
+  color: #374151;
+  font-weight: 500;
+}
+
+.placeholderState {
+  text-align: center;
+  padding: 80px 20px;
+  color: #6B7280;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.emptyIcon {
+  margin-bottom: 16px;
+  color: #D1D5DB;
+}
+
+.emptyText {
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+/* Profile Slide-out Panel */
+.profilePanel {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 400px;
+  height: 100vh;
+  background: white;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+.profilePanelOpen {
+  right: 0;
+}
+
+.profilePanelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.profilePanelTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.closeBtn {
+  background: transparent;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6B7280;
+}
+
+.closeBtn:hover {
+  background: #F3F4F6;
+}
+
+.profilePanelContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.profileUserHero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.profileUserAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #3B82F6;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileUserDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profileUserName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.profileUserMeta {
+  font-size: 0.75rem;
+  color: #6B7280;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profileTabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #E5E7EB;
+  margin-bottom: 24px;
+}
+
+.profileTab {
+  padding: 8px 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6B7280;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profileTabActive {
+  color: #3B82F6;
+  border-bottom: 2px solid #3B82F6;
+}
+
+.profileDataGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 16px;
+}
+
+.profileDataLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.profileDataValue {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.profileDataEmpty {
+  color: #9CA3AF;
+  font-style: italic;
+  font-weight: 400;
+}

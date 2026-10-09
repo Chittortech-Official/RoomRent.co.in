@@ -1,0 +1,177 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 0.2s ease forwards;
+  padding: 16px;
+}
+
+.modalContent {
+  background: white;
+  border-radius: var(--r-xl);
+  width: 100%;
+  max-width: 440px;
+  padding: 32px 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: scale(0.95) translateY(10px);
+  opacity: 0;
+  animation: slideUpCenter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideUpCenter {
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.iconWrapper.warning {
+  border: 4px solid #FDBA74; /* Orange-300 */
+  color: #F97316; /* Orange-500 */
+}
+
+.iconWrapper.success {
+  border: 4px solid #86EFAC; /* Green-300 */
+  color: #22C55E; /* Green-500 */
+}
+
+.iconWrapper.error {
+  border: 4px solid #FCA5A5; /* Red-300 */
+  color: #EF4444; /* Red-500 */
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.actionGroup {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: var(--r-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnConfirm {
+  background-color: #0F766E; /* Teal-700, similar to AMPLR */
+  color: white;
+}
+
+.btnConfirm:hover {
+  background-color: #115E59; /* Teal-800 */
+}
+
+.btnConfirm.warning {
+  background-color: #F97316;
+}
+.btnConfirm.warning:hover {
+  background-color: #EA580C;
+}
+.btnConfirm.error {
+  background-color: #EF4444;
+}
+.btnConfirm.error:hover {
+  background-color: #DC2626;
+}
+
+.btnCancel {
+  background-color: #E2E8F0; /* Slate-200 */
+  color: #475569; /* Slate-600 */
+}
+
+.btnCancel:hover {
+  background-color: #CBD5E1; /* Slate-300 */
+}
+
+/* =========================================
+   RESPONSIVE (MOBILE BOTTOM SHEET)
+   ========================================= */
+@media (max-width: 600px) {
+  .modalOverlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+  
+  .modalContent {
+    max-width: 100%;
+    border-radius: 24px 24px 0 0;
+    padding: 32px 24px 40px; /* Extra padding at bottom for safe area */
+    animation: slideUpBottom 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes slideUpBottom {
+    from {
+      transform: translateY(100%);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .actionGroup {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.0625rem;
+  }
+  
+  .btnConfirm {
+    order: 1; /* Primary action on top */
+  }
+  
+  .btnCancel {
+    order: 2; /* Cancel action below */
+  }
+}
